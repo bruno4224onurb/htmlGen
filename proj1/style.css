@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
 :root {
-    --bgColor: #8a1dc9;
+    --bgColor: #083b64;
     --bgColor2: #000000;
     --accentColor: #f0ececf5;
     --font: 'Karla', sans-serif;
@@ -13,7 +13,7 @@ body {
     padding: 0;
     min-height: 100vh;
     font-family: var(--font);
-    background: radial-gradient( ellipse at bottom, var(--bgColor) 0%, var(--bgColor2) 100%);
+    background: radial-gradient( var(--bgColor) 0%, var(--bgColor2) 100%);
     opacity: 0;
     animation: 1s ease-out var(--delay) 1 transitionAnimation; 
     animation-fill-mode: forwards;
@@ -22,26 +22,60 @@ body {
     position: relative;
 }
 
-#profilePicture, #profilePicture img {
-    position: relative;
-    width: 96px;
-    height: 96px;
-    display: block;
-    margin: 50px auto 30px;
-    border-radius: 50%;
-    -webkit-tap-highlight-color: transparent;
+.index{
+    background-image: url('Images/Centro-Esportivo-e-Cultural-Linan-1.jpg');
+    --bgColor: #acacac;
+    --bgColor2: #000000;
 }
 
-#userName {
-    color: var(--accentColor);
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 1.25;
-    display: block;
-    font-family: var(--font);
-    width: 100%;
+.fut{
+    background-image: url('Images/como-montar-escolinha-futebol-scaled.jpg');
+    --bgColor: #8fe467;
+    --bgColor2: #000000;
+}
+
+.bask{
+    background-image: url('Images/what-is-a-weighted-basketball-—-and-what-are-the-benefits-of-using-one.jpg');
+    --bgColor: #dd4d14;
+    --bgColor2: #000000;
+}
+
+
+.center{
     text-align: center;
+    color: rgb(253, 253, 253);
+    font-size: 2rem;
+    font-family: var(--font)a;
+}
+
+.title{
+    background: radial-gradient( var(--bgColor) 0%, var(--bgColor2) 100%);
+}
+
+.header{
+    font-size: 3rem;
+}
+
+.container{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu li{
+    display: inline;
+    padding: 20px
+}
+
+.menu li a{
+    font-size: 2rem;
     text-decoration: none;
+    color: rgb(253, 253, 253);
+}
+
+.menu li a:hover {
+    color: rgb(124, 124, 124)
 }
 
 #links {
@@ -51,55 +85,34 @@ body {
     margin: 27px auto;
 }
 
-.link {
-    position: relative;
-    background-color: transparent;
-    color: var(--accentColor);
-    border: solid var(--accentColor) 2px;
-    border-radius: 10px;
-    font-size: 1rem;
-    text-align: center;
-    display: block;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding: 10px; 
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
+.link{
+position: relative;
+background-color: transparent;
+color: var(--accentColor);
+border: solid var(--accentColor) 2px;
+border-radius: 10px;
+font-size: 1rem;
+text-align: center;
+display: block;
+margin-left: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
+padding: 10px; 
+text-decoration: none;
+-webkit-tap-highlight-color: transparent;
 }
 
 @media (hover: hover) {
-    .link:hover {
-        background-color: var(--accentColor);
-        color: var(--bgColor);
-    }
-}
-
-.link:active {
+.link:hover {
     background-color: var(--accentColor);
     color: var(--bgColor);
 }
-
-#hashtag {
-    position: relative;
-    padding-bottom: 20px;
-    color: var(--accentColor);
-    font-size: 2rem;
-    display: block;
-    font-family: var(--font);
-    width: 100%;
-    text-align: center;
-
-    overflow: hidden;
-    background: linear-gradient(90deg, var(--bgColor), var(--accentColor), var(--bgColor));
-    background-repeat: no-repeat;
-    background-size: 80%;
-    animation: animate 4s linear var(--delay) infinite;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: rgba(0, 0, 0, 0);
 }
 
+.link:active {
+background-color: var(--accentColor);
+color: var(--bgColor);
+}
 
 @keyframes transitionAnimation {
     0% {
@@ -130,102 +143,6 @@ body {
     }
 }
 
-.overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 2;
-    visibility: hidden;
-    opacity: 0;
-    overflow: hidden;
-    transition: .5s ease-in-out;
-}
-
-.popup {
-    position: relative;
-    top: -43%;
-    /* right: -100vh; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    /* max-height: 500px; */
-    width: auto;
-    height: auto;
-    margin: 56px;
-    background-color: var(--bgColor);
-    /* transform: rotate(32deg); */
-    transform: scale(0);
-    transition: .5s ease-in-out;
-}
-
-.popup-quote {
-    font-family : Baskerville, Georgia, serif;
-    font-style : italic;
-    position: flex;
-    color: var(--accentColor);
-    padding: 20px;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.popup-photo {
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
-
-.popup-photo img {
-    width: 100%;
-    height: 100%;
-}
-
-.overlay:target {
-    visibility: visible;
-    opacity: 1;
-}
-
-.overlay:target .popup {
-    transform: scale(1);
-    top: 0;
-}
-
-.popup-close {
-    position: absolute;
-    right: -1rem;
-    top: -1rem;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.7rem;
-    font-weight: 400;
-    border-radius: 100%;
-    background-color: var(--bgColor);
-    z-index: 4;
-    color: var(--accentColor);
-    line-height: 2.7rem;
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
-@media (hover: hover) {
-    .popup-close:hover {
-        background-color: var(--accentColor);
-        color: var(--bgColor);
-    }
-}
-
-.popup-close:active {
-    background-color: var(--accentColor);
-    color: var(--bgColor);
-}
 
 #stars1 {
     width: 1px;
